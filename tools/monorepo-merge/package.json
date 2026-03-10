@@ -31,7 +31,7 @@
 	},
 	"devDependencies": {
 		"@octokit/request-error": "^3.0.3",
-		"@types/node": "20.x.x",
+		"@types/node": "22.x.x",
 		"@woocommerce/eslint-plugin": "workspace:*",
 		"eslint": "^8.55.0",
 		"jscodeshift": "^0.13.1",
