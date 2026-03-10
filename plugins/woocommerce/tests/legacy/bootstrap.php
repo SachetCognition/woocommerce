@@ -245,21 +245,32 @@ class WC_Unit_Tests_Bootstrap {
 
 		WC_Install::install();
 
-		// Clear the fulfillments DB tables created flag so that
-		// FulfillmentsController::maybe_create_db_tables() will recreate
-		// them when the fulfillments feature is enabled during tests.
-		// The flag may be stale from a prior run while the tables were
-		// dropped by WC_Install::drop_tables() during uninstall above.
+		// Enable the fulfillments feature and create its DB tables so
+		// they are available to every test class in the suite.
+		// WC_Install::install() does not create the fulfillment tables
+		// (they are managed by FulfillmentsController::maybe_create_db_tables)
+		// and the uninstall step above drops them via WC_Install::drop_tables().
+		// Without this, non-fulfillment test classes (e.g. WC_Emails_Tests)
+		// that reference fulfillments will fail with "table doesn't exist".
+		update_option( 'woocommerce_feature_fulfillments_enabled', 'yes' );
 		delete_option( 'woocommerce_fulfillments_db_tables_created' );
+		$fulfillments_controller = wc_get_container()->get(
+			\Automattic\WooCommerce\Admin\Features\Fulfillments\FulfillmentsController::class
+		);
+		$fulfillments_controller->initialize_fulfillments();
 
-		// Also hook into 'woocommerce_installed' so that whenever
+		// Hook into 'woocommerce_installed' so that whenever
 		// WC_Install::install() is called again mid-test-suite (e.g. by
 		// install-related test classes), the stale flag is cleared and
-		// subsequent fulfillments tests can recreate their tables.
+		// the tables are recreated immediately.
 		add_action(
 			'woocommerce_installed',
 			function () {
 				delete_option( 'woocommerce_fulfillments_db_tables_created' );
+				$controller = wc_get_container()->get(
+					\Automattic\WooCommerce\Admin\Features\Fulfillments\FulfillmentsController::class
+				);
+				$controller->initialize_fulfillments();
 			}
 		);
 
