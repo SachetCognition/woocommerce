@@ -180,6 +180,65 @@
 					]
 				},
 				{
+					"name": "PHP: 8.2 WP: latest - 1",
+					"testType": "unit:php",
+					"command": "test:php:env",
+					"shardingArguments": [
+						"--testsuite=wc-phpunit-legacy",
+						"--testsuite=wc-phpunit-main"
+					],
+					"onlyForDependencies": [],
+					"changes": [
+						"client/admin/config/*.json",
+						"composer.json",
+						"composer.lock",
+						"**/*.php",
+						".wp-env.json",
+						"phpunit.xml"
+					],
+					"testEnv": {
+						"start": "env:test --debug",
+						"config": {
+							"phpVersion": "8.2",
+							"wpVersion": "latest-1"
+						}
+					},
+					"events": [
+						"pull_request",
+						"push",
+						"php-unit-php-8.2-wp-latest-1"
+					]
+				},
+				{
+					"name": "PHP: 8.2 WP: pre-release",
+					"optional": true,
+					"testType": "unit:php",
+					"command": "test:php:env",
+					"shardingArguments": [
+						"--testsuite=wc-phpunit-legacy",
+						"--testsuite=wc-phpunit-main"
+					],
+					"onlyForDependencies": [],
+					"changes": [
+						"tests/legacy/**",
+						"tests/php/**",
+						"tests/unit-tests/**",
+						"phpunit.xml"
+					],
+					"testEnv": {
+						"start": "env:test --debug",
+						"config": {
+							"phpVersion": "8.2",
+							"wpVersion": "prerelease"
+						}
+					},
+					"events": [
+						"pull_request",
+						"push",
+						"php-unit-php-8.2-wp-prerelease"
+					]
+				},
+				{
 					"name": "Checks from plugin-check plugin",
 					"command": "test:plugincheck",
 					"optional": true,
