@@ -245,6 +245,24 @@ class WC_Unit_Tests_Bootstrap {
 
 		WC_Install::install();
 
+		// Clear the fulfillments DB tables created flag so that
+		// FulfillmentsController::maybe_create_db_tables() will recreate
+		// them when the fulfillments feature is enabled during tests.
+		// The flag may be stale from a prior run while the tables were
+		// dropped by WC_Install::drop_tables() during uninstall above.
+		delete_option( 'woocommerce_fulfillments_db_tables_created' );
+
+		// Also hook into 'woocommerce_installed' so that whenever
+		// WC_Install::install() is called again mid-test-suite (e.g. by
+		// install-related test classes), the stale flag is cleared and
+		// subsequent fulfillments tests can recreate their tables.
+		add_action(
+			'woocommerce_installed',
+			function () {
+				delete_option( 'woocommerce_fulfillments_db_tables_created' );
+			}
+		);
+
 		// Reload capabilities after install, see https://core.trac.wordpress.org/ticket/28374.
 		if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 			$GLOBALS['wp_roles']->reinit();
