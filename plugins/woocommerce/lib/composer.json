@@ -4,7 +4,7 @@
 	"prefer-stable": true,
 	"minimum-stability": "dev",
 	"require": {
-		"php": ">=7.4"
+		"php": ">=8.2"
 	},
 	"require-dev": {
 		"mobiledetect/mobiledetectlib": "^3.74",
@@ -14,7 +14,7 @@
 	},
 	"config": {
 		"platform": {
-			"php": "7.4"
+			"php": "8.2"
 		}
 	},
 	"scripts": {

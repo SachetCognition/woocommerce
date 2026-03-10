@@ -4,7 +4,7 @@ includes:
 
 # Rewrite tested PHP version
 parameters:
-	phpVersion: 70400
+	phpVersion: 80200
 
 	# Ignore specific errors
 	ignoreErrors:

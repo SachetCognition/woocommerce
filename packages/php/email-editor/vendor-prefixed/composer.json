@@ -4,14 +4,14 @@
 	"prefer-stable": true,
 	"minimum-stability": "dev",
 	"require": {
-		"php": ">=7.4"
+		"php": ">=8.2"
 	},
     "require-dev": {
         "pelago/emogrifier": "7.3.0"
     },
 	"config": {
 		"platform": {
-			"php": "7.4"
+			"php": "8.2"
 		}
 	},
 	"scripts": {

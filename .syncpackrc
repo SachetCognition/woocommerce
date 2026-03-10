@@ -574,7 +574,7 @@
 			"packages": [
 				"**"
 			],
-			"pinVersion": "20.x.x"
+			"pinVersion": "22.x.x"
 		},
 		{
 			"label": "Testing related dependencies: React 18",
