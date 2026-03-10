@@ -10,7 +10,7 @@
 		"date"
 	],
 	"engines": {
-		"node": "^20.11.1"
+		"node": "^22.0.0"
 	},
 	"homepage": "https://github.com/woocommerce/woocommerce/tree/trunk/packages/js/date/README.md",
 	"repository": {
@@ -41,7 +41,7 @@
 		"@babel/core": "7.25.7",
 		"@types/jest": "29.5.x",
 		"@types/lodash": "^4.14.202",
-		"@types/node": "20.x.x",
+		"@types/node": "22.x.x",
 		"@types/qs": "^6.9.10",
 		"@woocommerce/eslint-plugin": "workspace:*",
 		"@woocommerce/internal-js-tests": "workspace:*",
@@ -52,7 +52,7 @@
 		"jest-environment-jsdom": "29.5.x",
 		"rimraf": "5.0.5",
 		"ts-jest": "29.1.x",
-		"typescript": "5.7.x",
+		"typescript": "5.8.x",
 		"wireit": "0.14.12"
 	},
 	"peerDependencies": {

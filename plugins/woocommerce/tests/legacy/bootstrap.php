@@ -245,6 +245,35 @@ class WC_Unit_Tests_Bootstrap {
 
 		WC_Install::install();
 
+		// Enable the fulfillments feature and create its DB tables so
+		// they are available to every test class in the suite.
+		// WC_Install::install() does not create the fulfillment tables
+		// (they are managed by FulfillmentsController::maybe_create_db_tables)
+		// and the uninstall step above drops them via WC_Install::drop_tables().
+		// Without this, non-fulfillment test classes (e.g. WC_Emails_Tests)
+		// that reference fulfillments will fail with "table doesn't exist".
+		update_option( 'woocommerce_feature_fulfillments_enabled', 'yes' );
+		delete_option( 'woocommerce_fulfillments_db_tables_created' );
+		$fulfillments_controller = wc_get_container()->get(
+			\Automattic\WooCommerce\Admin\Features\Fulfillments\FulfillmentsController::class
+		);
+		$fulfillments_controller->initialize_fulfillments();
+
+		// Hook into 'woocommerce_installed' so that whenever
+		// WC_Install::install() is called again mid-test-suite (e.g. by
+		// install-related test classes), the stale flag is cleared and
+		// the tables are recreated immediately.
+		add_action(
+			'woocommerce_installed',
+			function () {
+				delete_option( 'woocommerce_fulfillments_db_tables_created' );
+				$controller = wc_get_container()->get(
+					\Automattic\WooCommerce\Admin\Features\Fulfillments\FulfillmentsController::class
+				);
+				$controller->initialize_fulfillments();
+			}
+		);
+
 		// Reload capabilities after install, see https://core.trac.wordpress.org/ticket/28374.
 		if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 			$GLOBALS['wp_roles']->reinit();
