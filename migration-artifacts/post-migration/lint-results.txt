@@ -1,0 +1,12 @@
+
+> @woocommerce/plugin-woocommerce@10.7.0 lint:changes:branch /home/ubuntu/repos/woocommerce/plugins/woocommerce
+> pnpm '/^lint:changes:branch:.*$/'
+
+. lint:changes:branch:js$ bash ./bin/eslint-branch.sh
+. lint:changes:branch:php$ XDEBUG_MODE=off pnpm lint:php:changes:branch
+. lint:changes:branch:js: No changed files detected.
+. lint:changes:branch:js: Done
+. lint:changes:branch:php: > @woocommerce/plugin-woocommerce@10.7.0 lint:php:changes:branch /home/ubuntu/repos/woocommerce/plugins/woocommerce
+. lint:changes:branch:php: > composer run-script lint-branch
+. lint:changes:branch:php: > bash ./bin/lint-branch.sh
+. lint:changes:branch:php: Done
