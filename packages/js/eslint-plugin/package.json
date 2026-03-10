@@ -5,7 +5,7 @@
 	"author": "Automattic",
 	"license": "GPL-2.0-or-later",
 	"engines": {
-		"node": "^20.11.1"
+		"node": "^22.0.0"
 	},
 	"keywords": [
 		"wordpress",
@@ -54,7 +54,7 @@
 		"jest-cli": "29.5.x",
 		"rimraf": "5.0.5",
 		"ts-jest": "29.1.x",
-		"typescript": "5.7.x",
+		"typescript": "5.8.x",
 		"wireit": "0.14.12"
 	},
 	"lint-staged": {

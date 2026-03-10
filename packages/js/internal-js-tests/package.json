@@ -5,7 +5,7 @@
 	"author": "Automattic",
 	"license": "GPL-2.0-or-later",
 	"engines": {
-		"node": "^20.11.1"
+		"node": "^22.0.0"
 	},
 	"homepage": "https://github.com/woocommerce/woocommerce/tree/trunk/packages/js/internal-js-tests/README.md",
 	"repository": {
@@ -60,7 +60,7 @@
 		"rimraf": "5.0.5",
 		"ts-jest": "29.1.x",
 		"lib0": "0.2.x",
-		"typescript": "5.7.x",
+		"typescript": "5.8.x",
 		"wireit": "0.14.12"
 	},
 	"peerDependencies": {
