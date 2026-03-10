@@ -12,9 +12,7 @@ test.describe( 'WooCommerce Coming Soon Mode', () => {
 		await page.goto(
 			'wp-admin/admin.php?page=wc-settings&tab=site-visibility'
 		);
-		const comingSoonCheckbox = page.locator(
-			'#woocommerce_coming_soon'
-		);
+		const comingSoonCheckbox = page.locator( '#woocommerce_coming_soon' );
 		if ( await comingSoonCheckbox.isChecked() ) {
 			await comingSoonCheckbox.uncheck();
 			await page.locator( 'text=Save changes' ).click();
@@ -30,9 +28,7 @@ test.describe( 'WooCommerce Coming Soon Mode', () => {
 		);
 
 		// Enable coming soon mode
-		const comingSoonCheckbox = page.locator(
-			'#woocommerce_coming_soon'
-		);
+		const comingSoonCheckbox = page.locator( '#woocommerce_coming_soon' );
 		if ( ! ( await comingSoonCheckbox.isChecked() ) ) {
 			await comingSoonCheckbox.check();
 		}
@@ -54,9 +50,7 @@ test.describe( 'WooCommerce Coming Soon Mode', () => {
 		await page.goto(
 			'wp-admin/admin.php?page=wc-settings&tab=site-visibility'
 		);
-		const comingSoonCheckbox = page.locator(
-			'#woocommerce_coming_soon'
-		);
+		const comingSoonCheckbox = page.locator( '#woocommerce_coming_soon' );
 		if ( ! ( await comingSoonCheckbox.isChecked() ) ) {
 			await comingSoonCheckbox.check();
 			await page.locator( 'text=Save changes' ).click();

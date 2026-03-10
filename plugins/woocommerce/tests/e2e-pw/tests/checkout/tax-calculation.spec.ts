@@ -23,19 +23,16 @@ test.describe( 'WooCommerce Tax Calculation E2E', () => {
 		);
 
 		// Create a tax rate
-		const taxResponse = await restApi.post(
-			`${ WC_API_PATH }/taxes`,
-			{
-				country: 'US',
-				state: 'CA',
-				rate: '10.0000',
-				name: 'CA Tax',
-				priority: 1,
-				compound: false,
-				shipping: true,
-				class: 'standard',
-			}
-		);
+		const taxResponse = await restApi.post( `${ WC_API_PATH }/taxes`, {
+			country: 'US',
+			state: 'CA',
+			rate: '10.0000',
+			name: 'CA Tax',
+			priority: 1,
+			compound: false,
+			shipping: true,
+			class: 'standard',
+		} );
 		taxRateId = taxResponse.data.id;
 
 		// Create a simple product
@@ -53,16 +50,14 @@ test.describe( 'WooCommerce Tax Calculation E2E', () => {
 	test.afterAll( async ( { restApi } ) => {
 		// Cleanup
 		if ( productId ) {
-			await restApi.delete(
-				`${ WC_API_PATH }/products/${ productId }`,
-				{ force: true }
-			);
+			await restApi.delete( `${ WC_API_PATH }/products/${ productId }`, {
+				force: true,
+			} );
 		}
 		if ( taxRateId ) {
-			await restApi.delete(
-				`${ WC_API_PATH }/taxes/${ taxRateId }`,
-				{ force: true }
-			);
+			await restApi.delete( `${ WC_API_PATH }/taxes/${ taxRateId }`, {
+				force: true,
+			} );
 		}
 		// Disable taxes
 		await restApi.put(
@@ -71,9 +66,7 @@ test.describe( 'WooCommerce Tax Calculation E2E', () => {
 		);
 	} );
 
-	test( 'can verify tax rate is created via API', async ( {
-		restApi,
-	} ) => {
+	test( 'can verify tax rate is created via API', async ( { restApi } ) => {
 		const response = await restApi.get(
 			`${ WC_API_PATH }/taxes/${ taxRateId }`
 		);
@@ -92,9 +85,7 @@ test.describe( 'WooCommerce Tax Calculation E2E', () => {
 		await expect( page.locator( '#rates' ) ).toBeVisible();
 
 		// Verify our tax rate is listed
-		await expect(
-			page.locator( 'input[value="CA Tax"]' )
-		).toBeVisible();
+		await expect( page.locator( 'input[value="CA Tax"]' ) ).toBeVisible();
 	} );
 
 	test( 'can add product to cart and verify tax is applied', async ( {
@@ -104,9 +95,7 @@ test.describe( 'WooCommerce Tax Calculation E2E', () => {
 		await page.goto( `/?p=${ productId }` );
 
 		// Add to cart
-		await page
-			.locator( 'button[name="add-to-cart"]' )
-			.click();
+		await page.locator( 'button[name="add-to-cart"]' ).click();
 
 		// Go to cart
 		await page.goto( '/cart/' );

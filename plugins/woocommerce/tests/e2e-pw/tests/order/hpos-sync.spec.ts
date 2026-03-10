@@ -39,10 +39,9 @@ test.describe(
 				);
 			}
 			if ( orderId ) {
-				await restApi.delete(
-					`${ WC_API_PATH }/orders/${ orderId }`,
-					{ force: true }
-				);
+				await restApi.delete( `${ WC_API_PATH }/orders/${ orderId }`, {
+					force: true,
+				} );
 			}
 		} );
 
@@ -81,9 +80,7 @@ test.describe(
 			).toContainText( 'HPOS Test Product' );
 		} );
 
-		test( 'can verify order appears in orders list', async ( {
-			page,
-		} ) => {
+		test( 'can verify order appears in orders list', async ( { page } ) => {
 			// Navigate to orders list
 			await page.goto( 'wp-admin/admin.php?page=wc-orders' );
 
@@ -93,13 +90,9 @@ test.describe(
 			).toBeVisible();
 		} );
 
-		test( 'can verify HPOS status in system status', async ( {
-			page,
-		} ) => {
+		test( 'can verify HPOS status in system status', async ( { page } ) => {
 			// Navigate to WooCommerce > Status > System Status
-			await page.goto(
-				'wp-admin/admin.php?page=wc-status'
-			);
+			await page.goto( 'wp-admin/admin.php?page=wc-status' );
 
 			// Look for the order datastore info
 			await expect(

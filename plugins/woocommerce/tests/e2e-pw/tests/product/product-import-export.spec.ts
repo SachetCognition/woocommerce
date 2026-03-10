@@ -13,9 +13,7 @@ test.describe( 'WooCommerce Product Import/Export UI', () => {
 		);
 
 		// Verify the import page loads
-		await expect(
-			page.locator( '.wc-progress-steps' )
-		).toBeVisible();
+		await expect( page.locator( '.wc-progress-steps' ) ).toBeVisible();
 		await expect( page.locator( 'h2' ) ).toContainText(
 			'Import products from a CSV file'
 		);
@@ -30,9 +28,7 @@ test.describe( 'WooCommerce Product Import/Export UI', () => {
 		);
 
 		// Verify the export page loads
-		await expect(
-			page.locator( '.woocommerce-exporter' )
-		).toBeVisible();
+		await expect( page.locator( '.woocommerce-exporter' ) ).toBeVisible();
 
 		// Verify columns selection is present
 		await expect(
@@ -45,9 +41,7 @@ test.describe( 'WooCommerce Product Import/Export UI', () => {
 		).toBeVisible();
 	} );
 
-	test( 'can select export columns and product types', async ( {
-		page,
-	} ) => {
+	test( 'can select export columns and product types', async ( { page } ) => {
 		await page.goto(
 			'wp-admin/edit.php?post_type=product&page=product_exporter'
 		);
