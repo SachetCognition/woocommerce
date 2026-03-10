@@ -237,7 +237,7 @@
 		"storybook-addon-react-docgen": "1.2.44",
 		"stylelint": "^16.8.2",
 		"stylelint-scss": "^6.4.0",
-		"typescript": "5.7.x",
+		"typescript": "5.8.x",
 		"utility-types": "3.10.0",
 		"webpack": "5.97.x",
 		"webpack-bundle-analyzer": "4.9.x",
@@ -247,7 +247,7 @@
 		"wp-types": "3.63.0"
 	},
 	"engines": {
-		"node": "^20.11.1"
+		"node": "^22.0.0"
 	},
 	"dependencies": {
 		"@ariakit/react": "^0.4.5",

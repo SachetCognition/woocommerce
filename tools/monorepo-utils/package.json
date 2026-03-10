@@ -58,13 +58,13 @@
 		"replace": "^1.2.2",
 		"ts-jest": "29.1.x",
 		"ts-loader": "9.5.x",
-		"typescript": "5.7.x",
+		"typescript": "5.8.x",
 		"webpack": "5.97.x",
 		"webpack-cli": "5.1.x",
 		"wireit": "0.14.12"
 	},
 	"engines": {
-		"node": "^20.11.1"
+		"node": "^22.0.0"
 	},
 	"config": {
 		"ci": {

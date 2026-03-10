@@ -28,10 +28,10 @@
 			"dependencyTypes": [
 				"engines"
 			],
-			"pinVersion": ">=20.11.1",
-			"packages": [
-				"@woocommerce/tracks"
-			]
+						"pinVersion": ">=22.0.0",
+						"packages": [
+							"@woocommerce/tracks"
+						]
 		},
 		{
 			"dependencies": [
@@ -40,11 +40,11 @@
 			"dependencyTypes": [
 				"engines"
 			],
-			"pinVersion": "^20.11.1",
-			"packages": [
-				"**"
-			]
-		},
+					"pinVersion": "^22.0.0",
+					"packages": [
+						"**"
+					]
+				},
 		{
 			"dependencies": [
 				"@automattic/color-studio",
@@ -90,11 +90,11 @@
 			"dependencies": [
 				"@typescript-eslint/**"
 			],
-			"pinVersion": "^5.62.0",
-			"packages": [
-				"**"
-			]
-		},
+					"pinVersion": "^7.0.0",
+					"packages": [
+						"**"
+					]
+				},
 		{
 			"label": "Babel dependencies, must be aligned with versions in @wordpress/babel-preset-default package",
 			"dependencies": [
@@ -171,7 +171,7 @@
 			"packages": [
 				"**"
 			],
-			"pinVersion": "5.7.x"
+			"pinVersion": "5.8.x"
 		},
 		{
 			"dependencies": [
