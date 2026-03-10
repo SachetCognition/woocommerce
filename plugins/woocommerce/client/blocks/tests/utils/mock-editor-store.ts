@@ -16,7 +16,7 @@
  */
 export const mockWordPressDataWithEditorStore = () => {
 	// Use require to avoid issues with Jest's module system
-	// eslint-disable-next-line @typescript-eslint/no-var-requires
+	// eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
 	const wpData = require( 'wordpress-data-wp-6-7' );
 	const mockEditorStore = wpData.createReduxStore( 'core/editor', {
 		reducer: () => ( {} ),

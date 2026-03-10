@@ -55,7 +55,7 @@ describe( 'getProductData', () => {
 		};
 
 		jest.isolateModules( () => {
-			//eslint-disable-next-line @typescript-eslint/no-var-requires
+			//eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports
 			const frontend = require( '../frontend' );
 			getProductData = frontend.getProductData;
 		} );
