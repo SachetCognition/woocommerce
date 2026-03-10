@@ -1,0 +1,3 @@
+Pre-Migration Build: PASSED (return code 0)
+Pre-Migration Lint: PASSED (no changed files on trunk)
+Note: Full PHP test suite requires Docker wp-env environment. Will run post-migration.

@@ -3,7 +3,7 @@
 	"description": "PHPStan analysis tasks for WooCommerce Email Editor",
 	"type": "project",
 	"require": {
-		"php": ">=7.4"
+		"php": ">=8.2"
 	},
 	"require-dev": {
 		"phpstan/phpstan": "^2.1",
@@ -14,7 +14,7 @@
 	},
 	"config": {
 		"platform": {
-			"php": "7.4"
+			"php": "8.2"
 		}
 	}
 }

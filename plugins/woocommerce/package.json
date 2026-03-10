@@ -180,7 +180,7 @@
 					]
 				},
 				{
-					"name": "PHP: 7.4 WP: latest - 1",
+					"name": "PHP: 8.2 WP: latest - 1",
 					"testType": "unit:php",
 					"command": "test:php:env",
 					"shardingArguments": [
@@ -199,18 +199,18 @@
 					"testEnv": {
 						"start": "env:test --debug",
 						"config": {
-							"phpVersion": "7.4",
+							"phpVersion": "8.2",
 							"wpVersion": "latest-1"
 						}
 					},
 					"events": [
 						"pull_request",
 						"push",
-						"php-unit-php-7.4-wp-latest-1"
+						"php-unit-php-8.2-wp-latest-1"
 					]
 				},
 				{
-					"name": "PHP: 7.4 WP: pre-release",
+					"name": "PHP: 8.2 WP: pre-release",
 					"optional": true,
 					"testType": "unit:php",
 					"command": "test:php:env",
@@ -228,14 +228,14 @@
 					"testEnv": {
 						"start": "env:test --debug",
 						"config": {
-							"phpVersion": "7.4",
+							"phpVersion": "8.2",
 							"wpVersion": "prerelease"
 						}
 					},
 					"events": [
 						"pull_request",
 						"push",
-						"php-unit-php-7.4-wp-prerelease"
+						"php-unit-php-8.2-wp-prerelease"
 					]
 				},
 				{
@@ -909,9 +909,9 @@
 		"@babel/preset-env": "7.25.7",
 		"@faker-js/faker": "^9.3.0",
 		"@playwright/test": "^1.57.0",
-		"@typescript-eslint/eslint-plugin": "^5.62.0",
-		"@typescript-eslint/experimental-utils": "^5.62.0",
-		"@typescript-eslint/parser": "^5.62.0",
+		"@typescript-eslint/eslint-plugin": "^7.0.0",
+		"@typescript-eslint/utils": "^7.0.0",
+		"@typescript-eslint/parser": "^7.0.0",
 		"@woocommerce/e2e-utils-playwright": "workspace:*",
 		"@woocommerce/eslint-plugin": "workspace:*",
 		"@wordpress/browserslist-config": "next",
@@ -936,12 +936,12 @@
 		"prettier": "npm:wp-prettier@^2.8.5",
 		"rimraf": "5.0.5",
 		"stylelint": "^14.16.1",
-		"typescript": "5.7.x",
+		"typescript": "5.8.x",
 		"wireit": "0.14.12",
 		"wp-textdomain": "1.0.1"
 	},
 	"engines": {
-		"node": "^20.11.1"
+		"node": "^22.0.0"
 	},
 	"browserslist": [
 		"> 0.1%",

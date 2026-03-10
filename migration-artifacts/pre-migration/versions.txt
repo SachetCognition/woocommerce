@@ -1,0 +1,11 @@
+Pre-Migration Runtime Versions
+==============================
+Date: Tue Mar 10 09:04:57 UTC 2026
+
+Node.js: v20.20.1
+npm: 10.8.2
+pnpm: 9.15.0
+PHP: 8.1.2-1ubuntu2.22 (cli)
+TypeScript: 5.7.2
+.nvmrc: v20
+Git Branch: trunk

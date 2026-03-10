@@ -1,0 +1,12 @@
+Post-Migration Runtime Versions
+===============================
+Date: Tue Mar 10 09:25:12 UTC 2026
+
+Node.js: v22.22.1
+npm: 10.9.4
+pnpm: 9.15.0
+PHP (host): 8.1.2-1ubuntu2.22 (cli)
+PHP (wp-env target): 8.5
+TypeScript: 5.8.3
+.nvmrc: v22
+Git Branch: devin/1773133878-migration-php82-ts58-node22-eslint7
